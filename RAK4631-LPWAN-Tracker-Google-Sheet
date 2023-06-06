@@ -1,4 +1,4 @@
-function Decoder(bytes, port) {
+function Decode(bytes, port) { // function is Decode not Decoder
   // TODO: Transform bytes to decoded payload below
     var sensor = {};
     sensor.latitude  = (bytes[0] | bytes[1] << 8 | bytes[2] << 16 | bytes[3] << 24 | (bytes[3] & 0x80 ? 0xFF << 24 : 0)) / 100000;
@@ -15,5 +15,6 @@ function Decoder(bytes, port) {
   };
   // END TODO
 
-  return Serialize(decodedPayload)
+  //return Serialize(decodedPayload) //Serialize isn't declared
+  return decodecPayload;
 }
